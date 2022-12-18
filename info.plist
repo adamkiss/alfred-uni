@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.adamkiss.uni</string>
+	<key>category</key>
+	<string>Tools / Apps</string>
+	<key>connections</key>
+	<dict>
+		<key>A3111EF6-C09F-48B8-9136-E324FAB0C3FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AA5490A-485A-41E1-801C-1864DE483EC9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Adam Kiss</string>
+	<key>description</key>
+	<string>Query the unicode database</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Unicode database</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>0AA5490A-485A-41E1-801C-1864DE483EC9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>uni</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching…</string>
+				<key>script</key>
+				<string>./uni search {query} -raw -as json | ./jq -cr '
+	.
+    | map(
+        .
+        | {
+            uuid: .dec,
+            title: .char,
+            subtitle: (.name + " (" + .cat + ")"),
+            icon: {path: "icons/icon.png"},
+            arg: .char,
+            mods: {
+                cmd: {
+                    arg: .html,
+                    subtitle: "html"
+                },
+                option: {
+                    arg: (.cpoint | sub("U\\+"; "\\u")),
+                    subtitle: "codepoint"
+                },
+                ctrl: {
+                    arg: .dec,
+                    subtitle: "decimal value"
+                }
+            }
+        }
+    )
+    | {items: .}
+'</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>uni/jq search</string>
+				<key>title</key>
+				<string>Search the Unicode database</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A3111EF6-C09F-48B8-9136-E324FAB0C3FD</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Alfred's Script Filter object is extremely powerful, and gives you control over the results displayed in Alfred.
+
+Alfred 3 now supports JSON, which is the recommended format. XML is also supported for legacy Alfred 2 workflows, and has been updated to include the new features.
+
+A new option now exists for Script Filters, "Alfred filters results". This allows you to return a whole list of results, let Alfred do the subsequent filtering with extreme performance. When this option is selected, your script will be called once with no argument.</string>
+	<key>uidata</key>
+	<dict>
+		<key>0AA5490A-485A-41E1-801C-1864DE483EC9</key>
+		<dict>
+			<key>xpos</key>
+			<real>265</real>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>A3111EF6-C09F-48B8-9136-E324FAB0C3FD</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>https://adamkiss.com</string>
+</dict>
+</plist>

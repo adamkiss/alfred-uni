@@ -5,9 +5,12 @@ Simple workflow wrapping [Uni by Martin Tournoij](https://github.com/arp242/uni)
 ## Installation
 
 1. Download the workflow
-2. In `Privacy & Security`, allow system to run the unsigned binary uni
-3. ???
-4. Profit
+2. Try to run it
+3. In `Privacy & Security`, allow system to run the unsigned binary `uni`
+4. Try to run it
+5. In `Privacy & Security`, allow system to run the unsigned binary `jq`
+6. ???
+7. Profit
 
 ## Usage
 
