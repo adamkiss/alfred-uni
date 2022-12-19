@@ -9,7 +9,7 @@
             uuid: .dec,
             title: .char,
             subtitle: (.name + " (" + .cat + ")"),
-            icon: {path: "icons/icon.png"},
+            icon: {path: "icon.png"},
             arg: .char,
             mods: {
                 cmd: {
