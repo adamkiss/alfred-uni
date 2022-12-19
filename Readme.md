@@ -2,6 +2,8 @@
 
 Simple workflow wrapping [Uni by Martin Tournoij](https://github.com/arp242/uni) for querying the Unicode database. Simple replacement of now (MacOS 13+) defunct python 2 UTF workflow.
 
+![Alfred-uni - workflow screenshot](https://user-images.githubusercontent.com/481362/208340988-c3104a43-2fa5-4a59-8731-9999e46b00bf.png)
+
 ## Installation
 
 1. Download the workflow
