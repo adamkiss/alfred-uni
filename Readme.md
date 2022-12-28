@@ -1,3 +1,11 @@
+----
+
+**Warning: I have now changed the command for this workflow to `UNI`, and will bring full uni syntax to it in the future. For a simple "search and copy/paste" workflow see, my [Alfred UTF search workflow](https://github.com/adamkiss/alfred-utf)**
+
+----
+
+
+
 # <span style="display: flex; align-items:center"><img src="https://user-images.githubusercontent.com/481362/208316661-a41a9042-b684-4f9a-b38c-1016247858d1.png" width="60" height="60"/> Alfred-uni</span>
 
 Simple workflow wrapping [Uni by Martin Tournoij](https://github.com/arp242/uni) for querying the Unicode database. Simple replacement of now (MacOS 13+) defunct python 2 UTF workflow.
