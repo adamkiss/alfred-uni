@@ -68,7 +68,7 @@
             uuid: .dec,
             title: .char,
             subtitle: (.name + " (" + .cat + ")"),
-            icon: {path: "icon.png"},
+            icon: {path: "./icon.png"},
             arg: .char,
             mods: {
                 cmd: {
@@ -112,7 +112,7 @@
 			<key>config</key>
 			<dict>
 				<key>autopaste</key>
-				<false/>
+				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
 				<key>ignoredynamicplaceholders</key>
